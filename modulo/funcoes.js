@@ -3,29 +3,26 @@ var contatosJson = require('./contatos.js')
 
 function getConta(contato) {
 
-    let arrayContatos = contato
+    let arrayConta = contato
     let contatoArray = []
-    let contatosJSON = false;
+    let contaJSON = false;
 
     contatosJson.contatos['whats-users'].forEach(function (numero) {
 
-        if (numero.number == arrayContatos) {
+        if (numero.number == arrayConta) {
             numero.contacts.forEach(function (contato) {
                 contatoArray.push(contato)
             })
-        } 
+        }
     })
 
-    if(arrayContatos.length > 0){
-        contatosJSON = {}
-        contatosJSON.contatos = contatoArray
+    if (arrayConta.length > 0) {
+        contaJSON = {}
+        contaJSON.contatos = contatoArray
     }
-
-    return contatosJSON
-
+    return contaJSON
 }
 module.exports = {
     getConta
-  }   
-console.log(getConta('11966578996'));
-  
+}
+// console.log(getConta('11966578996'));

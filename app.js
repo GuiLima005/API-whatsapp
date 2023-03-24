@@ -48,7 +48,7 @@ app.get('/v1/senai/conta', cors(), async function (request, response, next) {
 
     if (numeroConta == '' || numeroConta == undefined || isNaN(numeroConta)) {
         statusCode = 400
-         dadosConta.message = "Não é possivel processar a requisição pois o número está incorreto"
+         dadosConta.message = "Não é possivel processar a requisição pois o número da conta está incorreto"
     } else {
         let conta = funcoes.getConta(numeroConta)
 
