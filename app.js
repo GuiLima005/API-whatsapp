@@ -48,11 +48,11 @@ app.get('/v1/senai/conta', cors(), async function (request, response, next) {
 
     if (numeroConta == '' || numeroConta == undefined || isNaN(numeroConta)) {
         statusCode = 400
-        dadoEstado.message = "Não é possivel processar a requisição pois o número está incorreto"
+         dadosConta.message = "Não é possivel processar a requisição pois o número está incorreto"
     } else {
         let conta = funcoes.getConta(numeroConta)
 
-        if (cidades) {
+        if (conta) {
             statusCode = 200
             dadosConta = conta
         } else {
@@ -60,7 +60,7 @@ app.get('/v1/senai/conta', cors(), async function (request, response, next) {
         }
     }
     response.status(statusCode)
-    response.json(dadoEstado)
+    response.json(dadosConta )
 
 })
 

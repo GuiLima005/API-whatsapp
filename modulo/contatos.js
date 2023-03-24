@@ -570,19 +570,6 @@ const contatos = {
     ]
 }
 
-const getConta = function () {
-
-  let contaArray = []
-
-  contatos["whats-users"].forEach ( contatos => {
-    contaArray.push({
-      id: contatos.id,
-      name: contatos.account,
-      nick: contatos.nickname,
-      numero: contatos.number,
-    })
-  })
-  return contaArray
-
+module.exports = {
+  contatos
 }
-console.log(getConta());
